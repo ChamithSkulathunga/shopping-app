@@ -4,9 +4,11 @@
     <!-- Required meta tags -->
     @include('admin.css')
     <style>
-        .div_center{
-            text-align:center;
-            padding-top: 40px;
+         .div_center{
+            width:50%;
+            margin:auto;
+            text-align:left;
+            padding-top: 20px;
 
         }
         .font_size{
@@ -19,7 +21,7 @@
         }
         label{
             display:inline-block;
-            width: 200px;
+            width: 300px;
         }
         .div_design{
             padding-bottom:15px;
@@ -35,6 +37,12 @@
         <!-- partial -->
         <div class="main-panel">
             <div class="content-wrapper">
+                @if(session()->has('message'))
+                    <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">X</button>
+                        {{session()->get('message')}}
+                    </div>
+                @endif
                 <div class="div_center">
                     <h1 class="font_size">Add Product</h1>
 
